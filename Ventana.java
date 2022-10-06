@@ -1,4 +1,7 @@
+package Tarea_sis2;
 
+
+import Tarea_sis2.Conexion;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
