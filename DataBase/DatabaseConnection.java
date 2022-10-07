@@ -1,9 +1,8 @@
+package SisII.Tarea_sis2.DataBase;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
 
 /**
  * DatabaseConexion
@@ -22,5 +21,9 @@ public class DatabaseConnection {
         } catch (SQLException e) {
             System.out.print("error");
         }
+    }
+    
+    public Connection getConnection(){
+        return con;
     }
 }
