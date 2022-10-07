@@ -106,7 +106,7 @@ public class rogistro extends javax.swing.JFrame {
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         try{
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/comida","root","osito2021");
-            PreparedStatement pst = cn.prepareStatement("INSERT INTO listaor VALUES(?,?,?,?)");
+            PreparedStatement pst = cn.prepareStatement("INSERT INTO recipes (name_recipe, ingredients, score) VALUES(?,?,?,?)");
             pst.setString(1,"0" );
             pst.setString(2,txtPlato.getText().trim());
             pst.setString(3,txtIngredientes.getText().trim());
