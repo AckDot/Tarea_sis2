@@ -1,21 +1,41 @@
 package Tarea_sis2;
 
 
-import Tarea_sis2.Conexion;
+
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 public class Ventana extends javax.swing.JFrame {
-    
-    private Conexion conexion;
     
     public Ventana() {
         this.setTitle("Sistemas de informacion 2");
         this.setLocationRelativeTo(null);
-        conexion = new Conexion("jdbc:mysql://localhost:3306/platos?autoReconnet=true&useSSL=false", "root", "1234");
+        this.setVisible(true);
         initComponents();
+    }
+
+    public JTextField getCajaIngredientes() {
+        return cajaIngredientes;
+    }
+
+    public JTextField getCajaNomPlato() {
+        return cajaNomPlato;
+    }
+
+    public JTextField getCajaValor() {
+        return cajaValor;
+    }
+
+    public JButton getBotonGuardar() {
+        return botonGuardar;
+    }
+
+    public JButton getBotonSalir() {
+        return botonSalir;
     }
     
     @SuppressWarnings("unchecked")
@@ -59,18 +79,8 @@ public class Ventana extends javax.swing.JFrame {
 
         botonGuardar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         botonGuardar.setText("Guardar");
-        botonGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonGuardarActionPerformed(evt);
-            }
-        });
 
         botonSalir.setText("Salir");
-        botonSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonSalirActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -143,31 +153,6 @@ public class Ventana extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
-        try {
-            String no = cajaNomPlato.getText().trim();
-            if (!conexion.consultar(cajaNomPlato.getText())) {
-                if (conexion.agregarRegistro(no, cajaIngredientes.getText(), Integer.parseInt(cajaValor.getText()))) {
-                    JOptionPane.showMessageDialog(this, "Plato guardado correctamente");
-                } else {
-                    JOptionPane.showMessageDialog(this, "Error", "Error al guardar datos ", JOptionPane.ERROR_MESSAGE);
-                }
-            } else {
-                JOptionPane.showMessageDialog(this, "El plato ya existe", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        } catch (SQLException ex) {
-            System.err.print(ex.toString());
-        }
-        
-        cajaNomPlato.setText("");
-        cajaIngredientes.setText("");
-        cajaValor.setText("");
-    }//GEN-LAST:event_botonGuardarActionPerformed
-
-    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_botonSalirActionPerformed
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
