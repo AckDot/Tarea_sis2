@@ -2,5 +2,9 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "DataBase/mysql-connector-java-8.0.30.jar"
+    ],
+    "java.project.sourcePaths": [
+        "DataBase",
+        "com"
     ]
 }
