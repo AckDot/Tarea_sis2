@@ -1,4 +1,4 @@
-DROP DATABASE if EXISTS receta; 
+DROP DATABASE if EXISTS recipe; 
 CREATE DATABASE recipe;
 
 use recipe;
@@ -11,5 +11,7 @@ CREATE TABLE recipes (
   last_update TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO recipes (name_recipe, ingredients, score) VALUES();
 
 
