@@ -4,13 +4,13 @@
 Cuando se manejan convenciones se busca no solo definir buenas prácticas sino conocer también los elementos técnicos.
 
 
-Lenguaje de programación        :         JAVA versión 18.0.21 
-IDE de desarrollo                         :        NetBeans V 12 
-DBMS                                 :         MySQL v8.0
+Lenguaje de programación            :         JAVA versión 18.0.21 
+IDE de desarrollo                   :         NetBeans V 12 
+DBMS                                :         MySQL v8.0
 Control de versiones                :         GitHub v 2.37.3
-Sistema Operativo                        :         Windows 8, 10
-Conector Mysql - Java                :        Connector/Jdbc 8.0.30
-Servidor                                :        https://app.planetscale.com/ivpalacios47/recipes
+Sistema Operativo                   :         Windows 8, 10
+Conector Mysql - Java               :         Connector/Jdbc 8.0.30
+Servidor                            :         https://app.planetscale.com/ivpalacios47/recipes
 
 
 Convenciones Clases e Interfaces.
@@ -27,21 +27,6 @@ Los paquetes.
 * Si se van a usar paquetes dentro de otros paquetes, se unen mediante un punto (.) 
 * Finalizan con ;
 Ej:  package ventanas; package imagenes.iconos;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Convenciones en Métodos.
 Los métodos 
